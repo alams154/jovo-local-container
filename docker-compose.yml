@@ -1,0 +1,12 @@
+services:
+  node-js:
+    container_name: node-js
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true     
+    user: node
+    volumes:
+      - ./node-js_data:/home/node/app
+    network_mode: host
+    restart: unless-stopped
